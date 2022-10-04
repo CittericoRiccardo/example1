@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>ES2</title>
+    <style>
+      table,
+      th {
+        border: 1px solid;
+      }
+      tr {
+        border: this solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title1">ES2</h1>
+    <input type="number" id="input1" placeholder="inserisci il numero" />
+    <button id="btn1">aggiungi</button>
+    <table>
+      <th>Numero</th>
+      <th>pari/dispari</th>
+      <th>divisori</th>
+      <tr>
+        <td>6</td>
+        <td>pari</td>
+        <td>1,2,3,6</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>dispari</td>
+        <td>1,3,5,7</td>
+      </tr>
+    </table>
+    <script>
+      var dati = []; //dichiaramo array vuoto
+      //var oggettovuoto ={}->dichiarazione oggetto
+      var btn = document.getElementById("btn1");
+      btn.addEventListener("click", () => {
+        var valore = document.getElementById("input1").value - 0; //cast a numero
+        dati.push(valore);
+        console.log("premuto", valore);
+        console.log("array", dati);
+
+        // Find a <table> element with id="myTable":
+        var table = document.getElementById("myTable");
+
+        // Create an empty <tr> element and add it to the 1st position of the table:
+        var row = table.insertRow(-1);
+
+        // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell2 = row.insertCell(2);
+        cell1.innerHTML = valore;
+        var pari;
+        // Add some text to the new cells:
+        cell2.innerHTML = valore % 2 === 0 ? "pari" : "dispari";
+        cell2.innerHTML = divisori;
+      });
+    </script>
+  </body>
+</html>
